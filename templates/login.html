@@ -66,11 +66,11 @@ PHOTOGRAPHY</title>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'portfolio' %}">Portfolio </a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item ">
                                 <a class="nav-link " href="{% url 'contact' %}">Contact us</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{%url 'login'  %}">Login</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
                             </li>
                         </ul>
                         <form class="form-inline">
@@ -96,20 +96,23 @@ PHOTOGRAPHY</title>
                         {% csrf_token %}
                         <div>
                             {{ contact_form.name }}
-                            </div>
+                        </div>
                         <div>
                             {{ contact_form.email }}
-                            </div>
+                        </div>
                         <div>
                             {{ contact_form.subject }}
-                            </div>
+                        </div>
                         <div>
                             {{ contact_form.message }}
-                            </div>
+                        </div>
 
                         <div class="d-flex ">
                             <button type="submit" name="submit" value="submit">
-                                SEND
+                                Login
+                            </button>
+                            <button type="submit" name="submit" value="submit">
+                                Register
                             </button>
                         </div>
                     </form>
@@ -138,16 +141,7 @@ PHOTOGRAPHY</title>
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="info-logo">
-                        <a href="{% static ' ' %}">
-                            <img src="{% static 'images/info-logo.png ' %}" alt="">
-                        </a>
-                        <p>
-                            It is a long established fact that a reader will be distracted by the readable content of a
-                            page when
-                            looking at its layout. The point of
-                        </p>
-                    </div>
+
                 </div>
                 <div class="col-lg-2 col-md-3 offset-lg-1">
                     <div class="info-nav">
@@ -266,8 +260,7 @@ PHOTOGRAPHY</title>
                 </div>
             </div>
             <div class="info_form">
-                    </div>
-                </form>
+
             </div>
         </div>
     </section>

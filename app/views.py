@@ -31,3 +31,6 @@ def contact(request):
 def portfolio(request):
     return render(request,'portfolio.html')
 
+def login(request):
+    return render(request,'login.html')
+
