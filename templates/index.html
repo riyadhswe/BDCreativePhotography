@@ -61,16 +61,16 @@
                     <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                         <ul class="navbar-nav  ">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'index'  %}">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'about'  %} "> About</a>
+                                <a class="nav-link" href="{% url 'about' %} "> About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'portfolio'  %}">Portfolio </a>
+                                <a class="nav-link" href="{% url 'portfolio' %}">Portfolio </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact'  %}">Contact us</a>
+                                <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">Login</a>
@@ -105,12 +105,12 @@
                                 <div class="carousel-item active">
                                     <div class="detail_box">
                                         <h1>
-                                            BD  <br/>
+                                            BD <br/>
                                             Creative <br/>
                                             Photography
                                         </h1>
                                         <p>
-                                            Creative, Professional, Energetic!
+                                            {{ title }}
                                         </p>
                                         <div class="btn-box">
                                             <a href="{% static ' ' %}" class="btn-1">Contact</a>
@@ -121,12 +121,12 @@
                                 <div class="carousel-item ">
                                     <div class="detail_box">
                                         <h1>
-                                                        BD  <br/>
+                                            BD <br/>
                                             Creative <br/>
                                             Photography
                                         </h1>
                                         <p>
-                                            Creative, Professional, Energetic!
+                                            {{ title }}
                                         </p>
                                         <div class="btn-box">
                                             <a href="{% static ' ' %}" class="btn-1">Contact</a>
@@ -137,12 +137,12 @@
                                 <div class="carousel-item ">
                                     <div class="detail_box">
                                         <h1>
-                                            BD  <br/>
+                                            BD <br/>
                                             Creative <br/>
                                             Photography
                                         </h1>
                                         <p>
-                                            Creative, Professional, Energetic!
+                                            {{ title }}
                                         </p>
                                         <div class="btn-box">
                                             <a href="{% static ' ' %}" class="btn-1">Contact</a>
@@ -173,8 +173,6 @@
         </div>
     </section>
 </div>
-
-
 
 
 <section class="info_section layout_padding2">
@@ -312,10 +310,11 @@
             <h4>
                 Subscribe
             </h4>
-            <form action="">
-                <input type="text" placeholder="Enter your email">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ subcribe_form.name }}
                 <div class="d-flex justify-content-end">
-                    <button>
+                    <button type="submit" name="submit">
 
                     </button>
                 </div>
